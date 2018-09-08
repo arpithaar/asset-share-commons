@@ -79,7 +79,8 @@ public class AssetTypeImpl extends AbstractComputedProperty<String> {
 
         String displayMimeType = null;
 
-        if (lookedupResource != null && !ResourceUtil.isNonExistingResource(lookedupResource)) {
+        if (lookedupResource != null && !ResourceUtil.isNonExistingResource(lookedupResource)
+                && !dcFormat.startsWith("audio")) {
             displayMimeType = UIHelper.lookupMimeType(ext, lookedupResource, true);
         }
 
